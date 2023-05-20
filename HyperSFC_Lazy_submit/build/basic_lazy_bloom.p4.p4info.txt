@@ -1,0 +1,276 @@
+pkg_info {
+  arch: "v1model"
+}
+tables {
+  preamble {
+    id: 45793278
+    name: "MyIngress.ipv4_1"
+    alias: "ipv4_1"
+  }
+  match_fields {
+    id: 1
+    name: "hdr.ipv4.dstAddr"
+    bitwidth: 32
+    match_type: LPM
+  }
+  action_refs {
+    id: 28792405
+  }
+  action_refs {
+    id: 25652968
+  }
+  action_refs {
+    id: 21257015
+  }
+  action_refs {
+    id: 21265175
+  }
+  size: 1024
+}
+tables {
+  preamble {
+    id: 39902027
+    name: "MyIngress.ipv4_2"
+    alias: "ipv4_2"
+  }
+  match_fields {
+    id: 1
+    name: "hdr.ipv4.dstAddr"
+    bitwidth: 32
+    match_type: LPM
+  }
+  action_refs {
+    id: 28792405
+  }
+  action_refs {
+    id: 25652968
+  }
+  action_refs {
+    id: 21257015
+  }
+  action_refs {
+    id: 32850041
+  }
+  size: 1024
+}
+tables {
+  preamble {
+    id: 50230917
+    name: "MyIngress.ipv4_3"
+    alias: "ipv4_3"
+  }
+  match_fields {
+    id: 1
+    name: "hdr.ipv4.dstAddr"
+    bitwidth: 32
+    match_type: LPM
+  }
+  action_refs {
+    id: 28792405
+  }
+  action_refs {
+    id: 25652968
+  }
+  action_refs {
+    id: 21257015
+  }
+  action_refs {
+    id: 26165165
+  }
+  size: 1024
+}
+tables {
+  preamble {
+    id: 48992864
+    name: "MyIngress.ipv4_4"
+    alias: "ipv4_4"
+  }
+  match_fields {
+    id: 1
+    name: "hdr.ipv4.dstAddr"
+    bitwidth: 32
+    match_type: LPM
+  }
+  action_refs {
+    id: 28792405
+  }
+  action_refs {
+    id: 25652968
+  }
+  action_refs {
+    id: 21257015
+  }
+  action_refs {
+    id: 20486912
+  }
+  size: 1024
+}
+actions {
+  preamble {
+    id: 21257015
+    name: "NoAction"
+    alias: "NoAction"
+    annotations: "@noWarn(\"unused\")"
+  }
+}
+actions {
+  preamble {
+    id: 25652968
+    name: "MyIngress.drop"
+    alias: "drop"
+  }
+}
+actions {
+  preamble {
+    id: 21265175
+    name: "MyIngress.addtable1"
+    alias: "addtable1"
+  }
+  params {
+    id: 1
+    name: "tableid"
+    bitwidth: 6
+  }
+  params {
+    id: 2
+    name: "keynumber"
+    bitwidth: 2
+  }
+}
+actions {
+  preamble {
+    id: 32908000
+    name: "MyIngress.checktable1"
+    alias: "checktable1"
+  }
+}
+actions {
+  preamble {
+    id: 32850041
+    name: "MyIngress.addtable2"
+    alias: "addtable2"
+  }
+  params {
+    id: 1
+    name: "tableid"
+    bitwidth: 6
+  }
+  params {
+    id: 2
+    name: "keynumber"
+    bitwidth: 2
+  }
+}
+actions {
+  preamble {
+    id: 26165165
+    name: "MyIngress.addtable3"
+    alias: "addtable3"
+  }
+  params {
+    id: 1
+    name: "tableid"
+    bitwidth: 6
+  }
+  params {
+    id: 2
+    name: "keynumber"
+    bitwidth: 2
+  }
+}
+actions {
+  preamble {
+    id: 20486912
+    name: "MyIngress.addtable4"
+    alias: "addtable4"
+  }
+  params {
+    id: 1
+    name: "tableid"
+    bitwidth: 6
+  }
+  params {
+    id: 2
+    name: "keynumber"
+    bitwidth: 2
+  }
+}
+actions {
+  preamble {
+    id: 28792405
+    name: "MyIngress.ipv4_forward"
+    alias: "ipv4_forward"
+  }
+  params {
+    id: 1
+    name: "dstAddr"
+    bitwidth: 48
+  }
+  params {
+    id: 2
+    name: "port"
+    bitwidth: 9
+  }
+}
+registers {
+  preamble {
+    id: 369221266
+    name: "HASH1"
+    alias: "HASH1"
+  }
+  type_spec {
+    bitstring {
+      bit {
+        bitwidth: 1
+      }
+    }
+  }
+  size: 256
+}
+registers {
+  preamble {
+    id: 385071735
+    name: "HASH2"
+    alias: "HASH2"
+  }
+  type_spec {
+    bitstring {
+      bit {
+        bitwidth: 1
+      }
+    }
+  }
+  size: 256
+}
+registers {
+  preamble {
+    id: 380388835
+    name: "HASH3"
+    alias: "HASH3"
+  }
+  type_spec {
+    bitstring {
+      bit {
+        bitwidth: 1
+      }
+    }
+  }
+  size: 256
+}
+registers {
+  preamble {
+    id: 381422121
+    name: "Rec_Time"
+    alias: "Rec_Time"
+  }
+  type_spec {
+    bitstring {
+      bit {
+        bitwidth: 48
+      }
+    }
+  }
+  size: 1
+}
+type_info {
+}

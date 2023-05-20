@@ -1,0 +1,173 @@
+pkg_info {
+  arch: "v1model"
+}
+tables {
+  preamble {
+    id: 45793278
+    name: "MyIngress.ipv4_1"
+    alias: "ipv4_1"
+  }
+  match_fields {
+    id: 1
+    name: "hdr.ipv4.dstAddr"
+    bitwidth: 32
+    match_type: LPM
+  }
+  action_refs {
+    id: 28792405
+  }
+  action_refs {
+    id: 25652968
+  }
+  action_refs {
+    id: 21257015
+  }
+  action_refs {
+    id: 29480744
+  }
+  size: 1024
+}
+tables {
+  preamble {
+    id: 39902027
+    name: "MyIngress.ipv4_2"
+    alias: "ipv4_2"
+  }
+  match_fields {
+    id: 1
+    name: "hdr.ipv4.dstAddr"
+    bitwidth: 32
+    match_type: LPM
+  }
+  action_refs {
+    id: 28792405
+  }
+  action_refs {
+    id: 25652968
+  }
+  action_refs {
+    id: 21257015
+  }
+  action_refs {
+    id: 29480744
+  }
+  size: 1024
+}
+tables {
+  preamble {
+    id: 50230917
+    name: "MyIngress.ipv4_3"
+    alias: "ipv4_3"
+  }
+  match_fields {
+    id: 1
+    name: "hdr.ipv4.dstAddr"
+    bitwidth: 32
+    match_type: LPM
+  }
+  action_refs {
+    id: 28792405
+  }
+  action_refs {
+    id: 25652968
+  }
+  action_refs {
+    id: 21257015
+  }
+  action_refs {
+    id: 29480744
+  }
+  size: 1024
+}
+tables {
+  preamble {
+    id: 48992864
+    name: "MyIngress.ipv4_4"
+    alias: "ipv4_4"
+  }
+  match_fields {
+    id: 1
+    name: "hdr.ipv4.dstAddr"
+    bitwidth: 32
+    match_type: LPM
+  }
+  action_refs {
+    id: 28792405
+  }
+  action_refs {
+    id: 25652968
+  }
+  action_refs {
+    id: 21257015
+  }
+  action_refs {
+    id: 29480744
+  }
+  size: 1024
+}
+actions {
+  preamble {
+    id: 21257015
+    name: "NoAction"
+    alias: "NoAction"
+    annotations: "@noWarn(\"unused\")"
+  }
+}
+actions {
+  preamble {
+    id: 25652968
+    name: "MyIngress.drop"
+    alias: "drop"
+  }
+}
+actions {
+  preamble {
+    id: 29480744
+    name: "MyIngress.tocpu"
+    alias: "tocpu"
+  }
+  params {
+    id: 1
+    name: "tableid"
+    bitwidth: 6
+  }
+  params {
+    id: 2
+    name: "keynumber"
+    bitwidth: 2
+  }
+}
+actions {
+  preamble {
+    id: 28792405
+    name: "MyIngress.ipv4_forward"
+    alias: "ipv4_forward"
+  }
+  params {
+    id: 1
+    name: "dstAddr"
+    bitwidth: 48
+  }
+  params {
+    id: 2
+    name: "port"
+    bitwidth: 9
+  }
+}
+registers {
+  preamble {
+    id: 381422121
+    name: "Rec_Time"
+    alias: "Rec_Time"
+  }
+  type_spec {
+    bitstring {
+      bit {
+        bitwidth: 48
+      }
+    }
+  }
+  size: 1
+}
+type_info {
+}
